@@ -1,29 +1,30 @@
-import "./register.css";
+import { Link } from "react-router-dom";
+import "./register.scss";
 
-export default function Register() {
+const Register = () => {
   return (
-    <div className="login">
-      <div className="loginWrapper">
-        <div className="loginLeft">
-          <h3 className="loginLogo">Lamasocial</h3>
-          <span className="loginDesc">
-            Connect with friends and the world around you on Lamasocial.
-          </span>
+    <div className="register">
+      <div className="card">
+        <div className="left">
+          <h3>QuestAcross</h3>
+          <span>Do you have an account?</span>
+          <Link to="/login">
+          <button>Login</button>
+          </Link>
         </div>
-        <div className="loginRight">
-          <div className="loginBox">
-            <input placeholder="Username" className="loginInput" />
-            <input placeholder="Email" className="loginInput" />
-            <input placeholder="Institute" className="loginInput" />
-            <input placeholder="Password" className="loginInput" />
-            <input placeholder="Password Again" className="loginInput" />
-            <button className="loginButton">Sign Up</button>
-            <button className="loginRegisterButton">
-              Log into Account
-            </button>
-          </div>
+        <div className="right">
+          <h1>Register</h1>
+          <form>
+          <input type="email" placeholder="Email" />
+            <input type="text" placeholder="College ID" />
+            <input type="password" placeholder="Password" />
+            <input type="text" placeholder="Name" />
+            <button>Register</button>
+          </form>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Register;

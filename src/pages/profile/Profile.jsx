@@ -1,41 +1,57 @@
-import "./profile.css";
-import Topbar from "././components/topbar/Topbar";
-import Sidebar from "././components/sidebar/Sidebar";
-import Feed from "././components/feed/Feed";
-import Rightbar from "././components/rightbar/Rightbar";
+import "./profile.scss";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import PlaceIcon from "@mui/icons-material/Place";
+import LanguageIcon from "@mui/icons-material/Language";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import Posts from "../../components/posts/Posts"
 
-export default function Profile() {
+const Profile = () => {
   return (
-    <>
-      <Topbar />
-      <div className="profile">
-        <Sidebar />
-        <div className="profileRight">
-          <div className="profileRightTop">
-            <div className="profileCover">
-              <img
-                className="profileCoverImg"
-                src="assets/post/3.jpeg"
-                alt=""
-              />
-              <img
-                className="profileUserImg"
-                src="assets/person/7.jpeg"
-                alt=""
-              />
-            </div>
-            <div className="profileInfo">
-                <h4 className="profileInfoName">21IT047</h4>
-                <span className="profileInfoDesc">Institute: CSPIT</span>
-                <span className="profileInfoDesc">Graduate Year:2025</span>
-            </div>
+    <div className="profile">
+      <div className="images">
+        <img
+          src="https://images.pexels.com/photos/13440765/pexels-photo-13440765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt=""
+          className="cover"
+        />
+        <img
+          src="https://images.pexels.com/photos/14028501/pexels-photo-14028501.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt=""
+          className="profilePic"
+        />
+      </div>
+      <div className="profileContainer">
+        <div className="uInfo">
+          <div className="left">
+            <a href="http://facebook.com">
+              <LinkedInIcon fontSize="large" />
+            </a>
+            
           </div>
-          <div className="profileRightBottom">
-            <Feed />
-            <Rightbar profile/>
+          <div className="center">
+            <span>Jane Doe</span>
+            <div className="info">
+              <div className="item">
+                <PlaceIcon />
+                <span>USA</span>
+              </div>
+              <div className="item">
+                <LanguageIcon />
+                <span>lama.dev</span>
+              </div>
+            </div>
+            <button>follow</button>
+          </div>
+          <div className="right">
+            <EmailOutlinedIcon />
+            <MoreVertIcon />
           </div>
         </div>
+      <Posts/>
       </div>
-    </>
+    </div>
   );
-}
+};
+
+export default Profile;

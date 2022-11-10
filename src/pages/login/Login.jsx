@@ -1,27 +1,40 @@
-import "./login.css";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
+import "./login.scss";
 
-export default function Login() {
+const Login = () => {
+  const { login } = useContext(AuthContext);
+
+  const handleLogin = () => {
+    login();
+  };
+
   return (
     <div className="login">
-      <div className="loginWrapper">
-        <div className="loginLeft">
-          <h3 className="loginLogo">QuestAcross</h3>
-          <span className="loginDesc">
-            We connect you to world threw Question and answer.
-          </span>
+      <div className="card">
+        <div className="left">
+          <h2>QuestAcross</h2>
+          <p>
+            Write your doubt Regarding your
+             College and Answer Those Questions
+          </p>
+          <span>Don't you have an account?</span>
+          <Link to="/register">
+            <button>Register</button>
+          </Link>
         </div>
-        <div className="loginRight">
-          <div className="loginBox">
-            <input placeholder="Email" className="loginInput" />
-            <input placeholder="Password" className="loginInput" />
-            <button className="loginButton">Log In</button>
-            <span className="loginForgot">Forgot Password?</span>
-            <button className="loginRegisterButton">
-              Create a New Account
-            </button>
-          </div>
+        <div className="right">
+          <h1>Login</h1>
+          <form>
+            <input type="text" placeholder="Username" />
+            <input type="password" placeholder="Password" />
+            <button onClick={handleLogin}>Login</button>
+          </form>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Login;
